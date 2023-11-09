@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$grey: #ddd;
+$green: greenyellow;
+$dark: #333;
+$yellow: #ffc107;
+$red: #dc3545;
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba($grey, 0.2);
+  color: $dark;
+  font-family: "Pacifico", cursive;
+}
+.container {
+  text-align: center;
+  background-color: white;
+  border-radius: 0.5rem;
+
+  .progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 1rem;
+    width: 250px;
+    max-width: 100%;
+    // margin: auto;
+    margin: 1.5rem auto;
+
+    &::before {
+      content: "";
+      background-color: $grey;
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      z-index: 0;
+      transition: 0.4s ease;
+    }
+    .progress {
+      background-color: $green;
+      height: 4px;
+      width: 0%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      z-index: 0;
+      transition: 0.4s ease;
+    }
+    .circle {
+      background-color: white;
+      border-radius: 1rem;
+      padding: 0rem 0.5rem;
+      min-width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid $grey;
+      transition: 0.4s ease;
+      z-index: 1;
+      text-align: center;
+      &.active {
+        border: 3px solid $green;
+        background-color: $green;
+        color: $dark;
+      }
+      &.active span {
+        display: block;
+      }
+      span {
+        display: none;
+        margin-left: 0.25rem;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .btn {
+    background-color: $green;
+    border: none;
+    border-radius: 3px;
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+    margin: 1.5rem auto;
+    font-family: "Pacifico", cursive;
+    cursor: pointer;
+    color: $dark;
+    &:disabled {
+      background-color: $grey;
+    }
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+  .content {
+    border-radius: 0.25rem;
+    padding: 2rem;
+    border-top: 1px solid rgba($grey, 0.4);
+    border-bottom: 1px solid rgba($grey, 0.4);
+    width: 450px;
+    display: none;
+    p {
+      margin-bottom: 1rem;
+    }
+    input {
+      height: 50px;
+      font-size: 0.9rem;
+      padding: 0rem 1rem;
+      border-bottom: 2px solid $grey;
+      border-radius: 0.25rem;
+      border: none;
+      outline: none;
+      font-family: inherit;
+      text-align: center;
+    }
+  }
+}
+
+%alert {
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 0.8rem;
+}
+.alert {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: "Poppins", sans-serif;
+  .alert-warning {
+    background-color: rgba($yellow, 0.2);
+    color: #664d03;
+    @extend %alert;
+  }
+  .alert-danger {
+    background-color: rgba($red, 0.4);
+    color: #58151c;
+    @extend %alert;
+  }
+}

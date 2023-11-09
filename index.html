@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steps</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="circle active">
+                1
+                <span>information</span>
+            </div>
+            <div class="circle">
+                2
+                <span>credit card</span>
+            </div>
+            <div class="circle">
+                3
+                <span>done</span>
+            </div>
+        </div>
+        <div class="content" id="content-1">
+            <p>Information</p>
+            <input type="text" name="name" placeholder="Please enter name">
+            <input type="text" name="surname" placeholder="Please enter surname">
+        </div>
+        <div class="content" id="content-2">
+            <p>Credit Card</p>
+            <input type="text" name="number" min="12" max="12" placeholder="Please enter card number">
+            <input type="date" name="date" placeholder="Please enter date">
+            <input type="text" name="cvv" placeholder="Please enter CVV">
+        </div>
+        <div class="content" id="content-3">
+            <p>Done</p>
+            <div class="results"></div>
+        </div>
+        <button class="btn" id="prev" disabled>prev</button>
+        <button class="btn" id="next">next</button>
+        <div class="alert"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
